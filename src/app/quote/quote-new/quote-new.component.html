@@ -1,0 +1,35 @@
+<p>
+  quote-new works!
+</p>
+<section>
+  <fieldset>
+    <legend>Add a Quote</legend>
+    <form (submit)="addQuote()">
+      <div>
+        <textarea
+          type="text"
+          name="quote"
+          required
+          minlength="4"
+          [(ngModel)]="newQuote.quote"
+          #quote="ngModel"
+        >
+        </textarea>
+      </div>
+      <div>
+        <label for="author"></label>
+        <input
+          type="text"
+          id="author"
+          name="author"
+          required
+          minlength="1"
+          [(ngModel)]="newQuote.author"
+          #author="ngModel"
+        >
+      </div>
+      <button>Add Quote</button>
+    </form>
+  </fieldset>
+  {{ newQuote | json }}
+</section>
