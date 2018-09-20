@@ -1,11 +1,8 @@
-<p>
-  quote-new works!
-</p>
 <section>
   <fieldset>
     <legend>Add a Quote</legend>
-    <form (submit)="addQuote()">
-      <div>
+    <form (submit)="addQuote(quoteForm)" #quoteForm="ngForm">
+      <div class="entry">
         <textarea
           type="text"
           name="quote"
@@ -16,8 +13,17 @@
         >
         </textarea>
       </div>
-      <div>
-        <label for="author"></label>
+      <div class="warning" *ngIf="quote.invalid && quote.touched">
+        <div *ngIf="quote.errors.required">
+          Quote is required
+        </div>
+        <div *ngIf="quote.errors.minlength">
+          Quote must be at least {{ quote.errors.minlength.requiredLength }} characters
+        </div>
+      </div>
+      <br>
+      <div class="entry">
+        <label for="author">Author</label>
         <input
           type="text"
           id="author"
@@ -28,8 +34,15 @@
           #author="ngModel"
         >
       </div>
-      <button>Add Quote</button>
+      <div class="warning" *ngIf="author.invalid && author.touched">
+        <div *ngIf="author.errors.required">
+          Author is required
+        </div>
+        <div *ngIf="author.errors.minlength">
+          Author must be at least {{ author.errors.minlength.requiredLength }} characters
+        </div>
+      </div>
+      <button [disabled]="quoteForm.invalid">Add Quote</button>
     </form>
   </fieldset>
-  {{ newQuote | json }}
 </section>

@@ -1,0 +1,53 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Trebuchet MS', Avenir, sans-serif;
+}
+
+fieldset {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border: none;
+}
+
+textarea {
+  margin-bottom: 10px;
+  width: 400px;
+  height: 150px;
+  font-size: 1em;
+}
+
+label {
+  margin-left: 139px;
+  padding: 4px 8px;
+}
+
+input {
+  margin-bottom: 10px;
+  width: 180px;
+  padding: 4px 8px;
+  font-size: 1em;
+}
+
+button {
+  display: block;
+  margin-left: 309px;
+  padding: 4px 8px;
+  font-size: 1em;
+  background-color: whitesmoke;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.entry {
+  display: inline-block;
+}
+
+.warning {
+  display: inline-block;
+  width: 200px;
+  padding-left: 15px;
+  vertical-align: top;
+  color: red;
+}
