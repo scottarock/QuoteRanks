@@ -1,14 +1,12 @@
 export class Quote {
 
-  votes: number;
-  quote: string;
-  author: string;
+  constructor(
+    public quote: string = '',
+    public author: string = '',
+    public votes: number = 0
+  ) {
 
-  constructor() {
-    this.quote='';
-    this.author='';
-    this.votes = 0;
-  }
+    }
 
   voteUp(): void {
     this.votes += 1;

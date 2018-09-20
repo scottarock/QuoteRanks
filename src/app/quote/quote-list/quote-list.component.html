@@ -1,3 +1,12 @@
-<div *ngFor="let quote of quotes">
-  {{ quote | json }}
-</div>
+<section>
+  <h1>Quotes List</h1>
+  <div class="quote" *ngFor="let quote of quotes">
+    <p>"{{ quote.quote }}" <br> - {{ quote.author }}</p>
+    <p class="vote"><span *ngIf="quote.votes > 0">+</span>{{ quote.votes }}</p>
+    <div class="buttons">
+      <button class="green">Vote Up</button><br>
+      <button class="red">Vote Down</button><br>
+      <button class="gray">Delete</button><br>
+    </div>
+  </div>
+</section>

@@ -13,6 +13,9 @@ export class QuoteComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.quoteList.push(new Quote('Whoops', 'me'));
+    this.quoteList.push(new Quote('Wherever you go, there you are', 'Buckaroo Bonzai', 327));
+    this.quoteList.push(new Quote('covfefe', 'Trump', -1000000));
   }
 
   addNewQuote(quote: Quote): void {

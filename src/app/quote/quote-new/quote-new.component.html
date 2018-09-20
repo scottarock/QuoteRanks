@@ -1,48 +1,46 @@
 <section>
-  <fieldset>
-    <legend>Add a Quote</legend>
-    <form (submit)="addQuote(quoteForm)" #quoteForm="ngForm">
-      <div class="entry">
-        <textarea
-          type="text"
-          name="quote"
-          required
-          minlength="4"
-          [(ngModel)]="newQuote.quote"
-          #quote="ngModel"
-        >
-        </textarea>
+  <h1>Add a Quote</h1>
+  <form (submit)="addQuote(quoteForm)" #quoteForm="ngForm">
+    <div class="entry">
+      <textarea
+        type="text"
+        name="quote"
+        required
+        minlength="4"
+        [(ngModel)]="newQuote.quote"
+        #quote="ngModel"
+      >
+      </textarea>
+    </div>
+    <div class="warning" *ngIf="quote.invalid && quote.touched">
+      <div *ngIf="quote.errors.required">
+        Quote is required
       </div>
-      <div class="warning" *ngIf="quote.invalid && quote.touched">
-        <div *ngIf="quote.errors.required">
-          Quote is required
-        </div>
-        <div *ngIf="quote.errors.minlength">
-          Quote must be at least {{ quote.errors.minlength.requiredLength }} characters
-        </div>
+      <div *ngIf="quote.errors.minlength">
+        Quote must be at least {{ quote.errors.minlength.requiredLength }} characters
       </div>
-      <br>
-      <div class="entry">
-        <label for="author">Author</label>
-        <input
-          type="text"
-          id="author"
-          name="author"
-          required
-          minlength="1"
-          [(ngModel)]="newQuote.author"
-          #author="ngModel"
-        >
+    </div>
+    <br>
+    <div class="entry">
+      <label for="author">Author</label>
+      <input
+        type="text"
+        id="author"
+        name="author"
+        required
+        minlength="1"
+        [(ngModel)]="newQuote.author"
+        #author="ngModel"
+      >
+    </div>
+    <div class="warning" *ngIf="author.invalid && author.touched">
+      <div *ngIf="author.errors.required">
+        Author is required
       </div>
-      <div class="warning" *ngIf="author.invalid && author.touched">
-        <div *ngIf="author.errors.required">
-          Author is required
-        </div>
-        <div *ngIf="author.errors.minlength">
-          Author must be at least {{ author.errors.minlength.requiredLength }} characters
-        </div>
+      <div *ngIf="author.errors.minlength">
+        Author must be at least {{ author.errors.minlength.requiredLength }} characters
       </div>
-      <button [disabled]="quoteForm.invalid">Add Quote</button>
-    </form>
-  </fieldset>
+    </div>
+    <button [disabled]="quoteForm.invalid">Add Quote</button>
+  </form>
 </section>
