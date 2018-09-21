@@ -22,4 +22,16 @@ export class QuoteComponent implements OnInit {
     this.quoteList.push(quote);
   }
 
+  voteUp(quote: Quote): void {
+    quote.voteUp();
+  }
+
+  voteDown(quote: Quote): void {
+    quote.voteDown();
+  }
+
+  deleteQuote(quote: Quote): void {
+    this.quoteList.splice(this.quoteList.indexOf(quote), 1)
+  }
+
 }

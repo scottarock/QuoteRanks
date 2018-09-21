@@ -1,3 +1,14 @@
-<app-quote-new (newQuoteEmitter)="addNewQuote($event)"></app-quote-new>
+{{ quoteList | json }}
+
+<app-quote-new
+  (newQuoteEmitter)="addNewQuote($event)"
+>
+</app-quote-new>
 <hr>
-<app-quote-list [quotes]="quoteList"></app-quote-list>
+<app-quote-list
+  [quotes]="quoteList"
+  (addVoteEmitter)="voteUp($event)"
+  (subtractVoteEmitter)="voteDown($event)"
+  (deleteQuoteEmitter)="deleteQuote($event)"
+>
+</app-quote-list>
