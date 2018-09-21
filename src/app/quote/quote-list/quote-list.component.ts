@@ -18,14 +18,17 @@ export class QuoteListComponent implements OnInit {
   ngOnInit() {
   }
 
+  // emit event to vote up a quote
   voteUp(quote: Quote): void {
     this.addVoteEmitter.emit(quote);
   }
 
+  // emit event to vote down a quote
   voteDown(quote: Quote): void {
     this.subtractVoteEmitter.emit(quote);
   }
 
+  // emit event to delete a quote
   remove(quote: Quote): void {
     this.deleteQuoteEmitter.emit(quote);
   }

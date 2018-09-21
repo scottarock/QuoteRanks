@@ -17,6 +17,7 @@ export class QuoteNewComponent implements OnInit {
   ngOnInit() {
   }
 
+  // emit event to add quote and then reset the form
   addQuote(form: NgForm) {
     this.newQuoteEmitter.emit(this.newQuote);
     this.newQuote = new Quote();
